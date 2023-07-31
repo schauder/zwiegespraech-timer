@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'kanit';
+  src: URL('kanit/Kanit-Bold.ttf') format('truetype');
+}
+
+
+body {
+    font-size:100%;
+    font:inherit;
+    font-family: 'kanit';
+}

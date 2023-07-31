@@ -1,11 +1,14 @@
-const duration = 15*60*1000;
-var startTime;
-var ctx;
-var timer;
 const centerX = 250;
 const centerY = 400;
 const radius = 200;
 const startAngle = 3.14159265;
+
+
+const duration = 15*60*1000;
+var startTime;
+var ctx;
+var timer;
+var done = false;
 
 function init() {
 
@@ -15,6 +18,7 @@ function init() {
 }
 
 function start() {
+
     startTime = Date.now();
     setInterval(update, 100);
 }
@@ -26,15 +30,14 @@ function update() {
     var restDuration = duration - diff;
     var progress = 1 - (restDuration/duration);
 
-    console.log(progress);
+    if (progress > 1){
+        progress = 1;
+        done = true;
+    }
 
     timer.innerHTML = format(restDuration);
 
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, startAngle, startAngle + progress * 3.14);
-    ctx.lineTo(centerX, centerY);
-    ctx.closePath();
-    ctx.stroke();
+    updatePiChart(ctx, progress);
 }
 
 function format(milliseconds){
@@ -46,4 +49,13 @@ function format(milliseconds){
     var hrs = Math.floor(minutes/ 60);
     minutes = minutes % 60;
     return hrs + " : " + minutes + " : " + seconds + " - <small>"+ milliseconds + "</small>";
+}
+
+function updatePiChart(ctx, progress) {
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, startAngle, startAngle + progress * 3.14);
+    ctx.lineTo(centerX, centerY);
+    ctx.closePath();
+    ctx.stroke();
 }
