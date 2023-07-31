@@ -5,6 +5,8 @@ const startAngle = 3.14159265;
 
 
 const duration = 15*60*1000;
+
+var updateTimer;
 var startTime;
 var ctx;
 var timer;
@@ -20,7 +22,11 @@ function init() {
 function start() {
 
     startTime = Date.now();
-    setInterval(update, 100);
+    updateTimer = setInterval(update, 100);
+}
+
+function stop() {
+    clearInterval(updateTimer);
 }
 
 function update() {
