@@ -1,4 +1,4 @@
-# zwiegespraech-timer
+# Zwiegespräch-Timer
 A timer for "Zwiegespräche" and a playground to fool around with web technology.
 
 You can find the current version here http://schauder.github.io/zwiegespraech-timer/
@@ -17,5 +17,5 @@ For more information see https://www.wielandstolzenburg.de/zwiegespraeche/ (Germ
 
 You don't. Especially not this one, which is horrible bad. 
 I'm not a Web of JavaScript developer and you can tell from the result.
-But maybe I made you aware of the idea of "Zwiegespraech".
+But maybe I made you aware of the idea of "Zwiegespräch".
 If so I considere the project a success.
