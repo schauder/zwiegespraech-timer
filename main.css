@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'kanit';
-  src: URL('kanit/Kanit-Bold.ttf') format('truetype');
+  src: url('kanit/Kanit-Bold.ttf') format('truetype');
 }
 
 
 body {
     font-size:10vw;
-    font-family: 'kanit';
+    font-family: 'kanit', sans-serif;
 }
